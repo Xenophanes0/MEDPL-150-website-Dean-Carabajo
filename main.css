@@ -57,9 +57,31 @@
 	color: #707793;
 }
 
+/*setting the max width to 1024 px, anything aboe or below 1024 get the styling. 
+Has the sidebar be a little bit smaller if there isn't enough space in width*/
 @media (max-width: 1024px) {
 	.sidebar {
 		max-width: 200px;
 	}
 }
 
+@media (max-width: 768px) {
+	.menu-toggle {
+		display: block;
+	}
+	.content {
+		padding-top: 8rem;
+	}
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: -300px;
+		height: 100vh;
+		width: 100%;
+		max-width: 300px;
+		transition: 0.2s linear;
+	}
+
+	.sidebar.is-active {
+		left: 0;
+	}
