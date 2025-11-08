@@ -1,193 +1,64 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans;
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-.app {
-  display: flex;
-  min-height: 100vh;
-}
-
-/*Stlyiong for when toggling through the menu - creates a ball where the menu is*/
-.menu-toggle {
-	display: none;
-	position: fixed;
-	top: 2rem;
-	right: 2rem;
-	width: 60px;
-	height: 60px;
-	border-radius: 99px;
-	background-color: #2e3047;
-	cursor: pointer;
-}
-
-/*dropdown menu content*/
-.dropdown {
-  position: relative;
-}
-
-/* Style the dropdown button */
-.dropbtn {
-  background-color: #2e3047;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #2e3047;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-/* Links inside dropdown content */
-.dropdown-content a {
-  color: #FFF;
-  padding: 12px 16px;
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
   text-decoration: none;
+  font-size: 20px;
+  color: #818181;
   display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1
-}
-
-/* Show the dropdown content on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change background color of dropdown button on hover */
-.dropdown:hover .dropbtn {
-  background-color: #e60000;
-}
-
-/*hamburger container is used to animate above the menu toggle container*/
-.hamburger {
-	position: relative;
-	top: calc(50% - 2px);
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 32px;
-}
-
-/* Creates the three line bar of a menu button on mobile devices (.hambuger > span containers) */
-.hamburger > span,
-.hamburger > span::before,
-.hamburger > span::after {
-  display: block;
-  position: absolute;
+  border: none;
+  background: none;
   width: 100%;
-  height: 4px;
-  border-radius: 99px;
-  background-color: #FFF;
-  transition-duration: .25s;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
 }
 
-.hamburger > span::before {
-  content: '';
-  top: -8px;
-}
-.hamburger > span::after {
-  content: '';
-  top: 8px;
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
 }
 
-/*Animations for the mobile sidebar button*/
-.menu-toggle.is-active .hamburger > span {
-  transform: rotate(45deg);
-}
-.menu-toggle.is-active .hamburger > span::before {
-  top: 0;
-  transform: rotate(0deg);
-}
-.menu-toggle.is-active .hamburger > span::after {
-  top: 0;
-  transform: rotate(90deg);
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }
 
-.sidebar{
-  flex: 1 1 0;
-  max-width: 300px;
-	padding: 2rem 1rem;
-	background-color: #2e3047;
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
 }
 
-.sidebar h3 {
-	color: #707793;
-	font-size: 0.75rem;
-	text-transform: uppercase;
-	margin-bottom: 0.5em;
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
 }
 
-.sidebar .menu {
-	margin: 0 -1rem;
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
 }
 
-.sidebar .menu .menu-item {
-	display: block;
-	padding: 1em;
-	color: #FFF;
-	text-decoration: none;
-	transition: 0.2s linear;
-}
-
-.sidebar .menu .menu-item:hover,
-.sidebar .menu .menu-item.is-active {
-	color: #3bba9c;
-	border-right: 5px solid #3bba9c;
-}
-
-.content {
-	flex: 1 1 0;
-	padding: 2rem;
-}
-
-.content h1 {
-	color: #3C3F58;
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
-}
-
-.content p {
-	color: #707793;
-}
-
-/*setting the max width to 1024 px, anything aboe or below 1024 get the styling. 
-Has the sidebar be a little bit smaller if there isn't enough space in width*/
-@media (max-width: 1024px) {
-	.sidebar {
-		max-width: 200px;
-	}
-}
-
-/*Ipad and small width display get the styling within this @menu */
-@media (max-width: 768px) {
-	.menu-toggle {
-		display: block;
-	}
-	.content {
-		padding-top: 8rem;
-	}
-	.sidebar {
-		position: fixed;
-		top: 0;
-		left: -300px;
-		height: 100vh;
-		width: 100%;
-		max-width: 300px;
-		transition: 0.2s linear;
-	}
-
-	.sidebar.is-active {
-		left: 0;
-	}
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
