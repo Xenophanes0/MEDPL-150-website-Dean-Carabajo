@@ -23,3 +23,25 @@ body {
   transition: 0.6s ease;
   transition-property: left;
 }
+
+/*Contents within the title section of the sidebar*/
+header {
+  background: #33363a;
+}
+
+header img{
+  width: 100px;
+  margin: 15px;
+  margin-left: 70px;
+  border-radius: 50%;
+  border: 3px solid #1b1a1b;    /*border color of the circle surrounding the image*/
+}
+
+.close-btn{
+  position: absolute;
+  color: #fff;
+  font-size: 23px;
+  right: 0px;
+  margin: 15px;
+  cursor: pointer;
+}
