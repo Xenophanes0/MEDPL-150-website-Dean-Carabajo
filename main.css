@@ -65,6 +65,7 @@ Has the sidebar be a little bit smaller if there isn't enough space in width*/
 	}
 }
 
+/*Ipad and small width display get the styling within this @menu */
 @media (max-width: 768px) {
 	.menu-toggle {
 		display: block;
