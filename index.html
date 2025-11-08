@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <title>MEDPL 150 Section 1 - Dean Carabajo (Home)</title>
-    <style>
+    <link rel="stylesheet" href="main.css"/>
+   <!-- <style>
     div {
       background-color: white;
       width: 1000px;
@@ -44,11 +46,50 @@
       margin: 0px;
     }
       
-    </style>
+    </style> -->
   </head>
   
   
   <body>
+    <!-- Adding in te styling for the button of the sidebar -->
+  <div class="app">
+    <!-- having something to click to open up the menu -->
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+      
+		</div>
+
+		<aside class="sidebar">
+			<h3>Menu</h3>
+			
+			<nav class="menu">
+				<a href="#" class="menu-item is-active">Home</a>
+				<a href="#" class="menu-item">About</a>
+				<a href="#" class="menu-item">Portfolio</a>
+				<a href="#" class="menu-item">Contact</a>
+			</nav>
+
+		</aside>
+
+		<main class="content">
+			<h1>Welcome, Human</h1>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, explicabo!</p>
+		</main>
+	</div>
+
+	<script>
+		const menu_toggle = document.querySelector('.menu-toggle');
+		const sidebar = document.querySelector('.sidebar');
+
+		menu_toggle.addEventListener('click', () => {
+			menu_toggle.classList.toggle('is-active');
+			sidebar.classList.toggle('is-active');
+		});
+	</script>
+
+    
     <nav id="sidebar">
       <ul>
         <li class="active">
