@@ -67,7 +67,7 @@
 
 /* Change background color of dropdown button on hover */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #e60000;
 }
 
 /*hamburger container is used to animate above the menu toggle container*/
