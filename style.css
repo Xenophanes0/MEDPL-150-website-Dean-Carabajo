@@ -99,7 +99,7 @@ menu {
 /*Creating an icon for user to click on to show the side menu (three lines, one on top each other)*/
 .menu-btn {
   position: absolute;
-  color: rgb(0,0,0);
+  color: rgb(255, 255, 255);
   font-size: 35px;
   cursor: pointer;
   margin: 25px;
