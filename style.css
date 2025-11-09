@@ -95,3 +95,30 @@ menu {
   background: #267267;
   display: none;
 }
+
+/*Creating an icon for user to click on to show the side menu (three lines, one on top each other)*/
+.menu-btn {
+  position: absolute;
+  color: rgb(0,0,0);
+  font-size: 35px;
+  cursor: pointer;
+  margin: 25px;
+}
+
+.side-bar.active {
+  left: 0;
+}
+
+.side-bar::-webkit-scrollbar {
+  width: 0px;
+}
+
+/*affects the padding from the left of the sub menu contents*/
+.item .side-menu a {
+  padding-left: 80px;
+}
+
+/*Affects how the arrow button rotates on a menu item with a sub menu*/
+.rotate {
+  transform: rotate(90deg);
+}
