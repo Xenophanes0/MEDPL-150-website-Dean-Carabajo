@@ -36,8 +36,11 @@
     </style> 
   </head>
   
-  
   <body>
+	<!--Menu button-->
+	<div class="menu-btn">
+		<i class="fas fa-bars"></i>
+	</div>
 	<div class="side-bar">
 		<!--Header section-->
 		<header>
@@ -53,8 +56,8 @@
 
 		<!--Menu items-->
 		<div class="menu">
-			<div class="item"><a href=""><i class="fas fa-"></i>Home</a></div>
-			<div class="item"><a href=""><i class="fas fa-"></i>Homeworks
+			<div class="item"><a href="index.html"><i class="fas fa-home"></i>Home</a></div>
+			<div class="item"><a class="sub-btn"><i class="fas fa-book"></i>Homeworks
 				<!--Dropdown menu-->
 				<!--Dropdown Arrow-->
 				<i class="fas fa-angle-right dropdown"></i>
@@ -70,8 +73,8 @@
 					<a href = "homework_7.html" class="sub-item">Homework #7 - Illustrated Environment</a>
 				</div>
 			</div>
-			<div class="item"><a href=""><i class="fas fa-"></i>Reading Reflections</a></div>
-			<div class="item"><a href=""><i class="fas fa-"></i>In-Class Lab Assignments</a>
+			<div class="item"><a href="readings.html"><i class="fas fa-edit"></i>Reading Reflections</a></div>
+			<div class="item"><a class="sub-btn"><i class="fas fa-flask"></i>In-Class Lab Assignments</a>
 			<!--Dropdown menu-->
 				<!--Dropdown Arrow-->
 				<i class="fas fa-angle-right dropdown"></i>
@@ -80,7 +83,7 @@
 					<a href="lab_assignment_1.html" class="sub-item">Lab Assignment #1 - 10/16/2025</a>
 				</div>
 			</div>
-			<div class="item"><a href=""><i class="fas fa-"></i>Extra Credit Assignments</a>
+			<div class="item"><a class="sub-btn"><i class="fas fa-dice-four"></i>Extra Credit Assignments</a>
 			<!--Dropdown menu-->
 				<!--Dropdown Arrow-->
 				<i class="fas fa-angle-right dropdown"></i>
@@ -88,121 +91,36 @@
 				<div class="sub-menu">
 					<a href= "extra_credit_assignment_1.html" class="sub-item">Extra Credit Assignment #1 - 10/27/2025</a>
 				</div>
-			
-			
-			
-			
-			
 			</div>
-		</div>
-	</div>
-	  
-
-
-
-	  
-	  
-	<div class="sidenav">
-  		<a href="#about">Home</a>
-  		<a href="#services">Homeworks</a>
-  		<a href="#clients">Reading Reflections</a>
-  		<a href="#contact">In Class Lab Assignments</a>
-  		<button class="dropdown-btn">Extra Credit Assignments 
-    		<i class="fa fa-caret-down"></i>
-  		</button>
-  		<div class="dropdown-container">
-    		<a href="#">Link 1</a>
-    		<a href="#">Link 2</a>
-    		<a href="#">Link 3</a>
-  		</div>
-	</div>
-
-	<div class="main">
-  		<h2>Sidebar Dropdown</h2>
-  		<p>Click on the dropdown button to open the dropdown menu inside the side navigation.</p>
-  		<p>This sidebar is of full height (100%) and always shown.</p>
-  		<p>Some random text..</p>
-	</div>
-
-	<script>
-	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-		var dropdown = document.getElementsByClassName("dropdown-btn");
-		var x;
-
-		for (x = 0; i < dropdown.length; x++) {
-  			dropdown[x].addEventListener("click", function() {
-    			this.classList.toggle("active");
-    			var dropdownContent = this.nextElementSibling;
-    			if (dropdownContent.style.display === "block") {
-      				dropdownContent.style.display = "none";
-    			} 
-				else {
-      				dropdownContent.style.display = "block";
-    			}
-  			});
-		}
-	</script>
-
-
-
-
-
-
-	  
-	
-    <!-- Adding in te styling for the button of the sidebar -->
-  <div class="app">
-    <!-- having something to click to open up the menu -->
-		<div class="menu-toggle">
-			<div class="hamburger">
-				<span></span>
-			</div>
-		</div>
-
-		<aside class="sidebar">
-			<h3>Menu</h3>
 			
-			<nav class="menu">
-				<!-- Home page -->
-				<a href="index.html" class="menu-item is-active">Home</a>
-				
-				<!-- Homework section -->
-				<div class="dropdown">
-  					<button class="dropbtn">Homeworks</button>
-  						<div class="dropdown-content">
-  							<a href="homework2_image1.html" class="menu-item">Homework #2 - Cropping and Resizing & Tonal Range - Image #1</a>
-							<a href="homework2_image2.html" class="menu-item">Homework #2 - Cropping and Resizing & Tonal Range - Image #2</a>
-							<a href="homework3_part1.html" class="menu-item">Homework #3 - Part #1</a>
-							<a href="homework3_part2.html" class="menu-item">Homework #3 - Part #2</a>
-							<a href="homework_4.html" class="menu-item">Homework #4 - Social Campaign – Photomontage</a>
-							<a href="homework_5.html" class="menu-item">Homework #5 - Social Campaign – Photomontage & Design</a>
-							<a href="lab_assignment_1.html" class="menu-item">Homework #6 - Emotive Eye Design</a>
-							<a href = "homework_7.html" class="menu-item">Homework #7 - Illustrated Environment</a>
-  						</div>
-				</div>
+			
+		</div>
+		<!--Jquery CDN links-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				//Expand and collapse the side bar
+				$('.menu-btn').click(function(){
+					$('.side-bar').addClass('active');
+					$('.menu-btn').css("visibility", "hidden");
+				});
+				//For close button
+				$('.close-btn').click(function(){
+					$('.side-bar').removeClass('active');
+					$('.menu-btn').css("visibility", "visible");
+				});
 
-				<!-- Reading Reflections section -->
-				<a href="readings.html" class="menu-item">Reading Reflections</a>
+				//Jquery for toggle sub menus
+				$('.sub-btn').click(function(){
+					$('this').next('sub-menu').slideToggle();
+					$(this).find('.dropdown').toggleClass('rotate');
+				});
+			})
+		</script>
+ 
 
-				<!-- In-class Lab Assignments -->
-				<div class="dropdown">
-  					<button class="dropbtn">In Class Lab Assignments</button>
-  						<div class="dropdown-content">
-  							<a href="lab_assignment_1.html" class="menu-item">Lab Assignment #1 - 10/16/2025</a>
-  						</div>
-				</div>
-
-				<!-- Extra Credit Assignments -->
-				<div class="dropdown">
-  					<button class="dropbtn">Extra Credit Assignments</button>
-  						<div class="dropdown-content">
-  							<a href= "extra_credit_assignment_1.html" class="menu-item">Extra Credit Assignment #1 - 10/27/2025</a>
-  						</div>
-				</div>
-			</nav>
-
-		</aside>
-
+		
 		<main class="content">
 			<h1 style="color:blue; align:center;"> Dean Carabajo</h1>
 			<p color: black;> Dean Carabajo
