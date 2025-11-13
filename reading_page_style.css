@@ -1,28 +1,28 @@
-body {
-        background-image: url("exodia_win_condition.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment:fixed;
-      }
+body { 
+  background-image: url("exodia_win_condition.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+}
 
-      h1 {
-        background-color: white;
-        width: 750px;
-        border: 5px solid black;
-        padding: 5px;
-        margin: 0px;
-      }
+h1 {
+  background-color: white;
+  width: 750px;
+  border: 5px solid black;
+  padding: 5px;
+  margin: 0px;
+}
 
-      div {
-        background-color: white;
-        width: 1400px;
-        border: 5px solid black;
-        padding: 5px;
-        margin: 0px;
-      }
+p {
+  background-color: white;
+  width: 1400px;
+  border: 5px solid black;
+  padding: 5px;
+  margin: 0px;
+ }
 
-      a {
-        background-color: white;
-        border: 5px solid black;
-        padding: 5px;
-      }
+a {
+  background-color: white;
+  border: 5px solid black;
+  padding: 5px;
+}
