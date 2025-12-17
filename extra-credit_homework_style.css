@@ -37,6 +37,10 @@ p {
   margin: 0px;
 }
 
+img {
+  border: 5px solid black;
+}
+
 a {
   background-color: white;
   border: 5px solid black;
