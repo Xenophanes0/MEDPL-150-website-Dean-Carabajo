@@ -31,14 +31,10 @@ h3 {
 
 p {
   background-color: white;
-  width: 1250px;
+  width: 1500px;
   border: 5px solid black;
   padding: 5px;
   margin: 0px;
-}
-
-img {
-  border: 5px solid black;
 }
 
 a {
